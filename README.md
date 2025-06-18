@@ -99,7 +99,7 @@ The API can be tested using the provided Postman collection. Import the collecti
 
 ## Deployment
 
-The application is deployed on [Railway.app](https://railway.app) and uses MongoDB Atlas for the database.
+The application is deployed on Render and uses MongoDB Atlas for the database.
 
 ## Known Limitations
 
