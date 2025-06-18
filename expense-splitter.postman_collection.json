@@ -1,0 +1,190 @@
+{
+  "info": {
+    "name": "Expense Splitter API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Expense Management",
+      "item": [
+        {
+          "name": "Add Expense - Dinner",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 600.00,\n  \"description\": \"Dinner at restaurant\",\n  \"paid_by\": \"Shantanu\",\n  \"split_type\": \"equal\",\n  \"split_details\": {\n    \"Shantanu\": 200,\n    \"Sanket\": 200,\n    \"Om\": 200\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/expenses",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "expenses"]
+            }
+          }
+        },
+        {
+          "name": "Add Expense - Groceries",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 450.00,\n  \"description\": \"Groceries\",\n  \"paid_by\": \"Sanket\",\n  \"split_type\": \"equal\",\n  \"split_details\": {\n    \"Shantanu\": 150,\n    \"Sanket\": 150,\n    \"Om\": 150\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/expenses",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "expenses"]
+            }
+          }
+        },
+        {
+          "name": "Add Expense - Petrol",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 300.00,\n  \"description\": \"Petrol\",\n  \"paid_by\": \"Om\",\n  \"split_type\": \"equal\",\n  \"split_details\": {\n    \"Shantanu\": 100,\n    \"Sanket\": 100,\n    \"Om\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/expenses",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "expenses"]
+            }
+          }
+        },
+        {
+          "name": "List All Expenses",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/expenses",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "expenses"]
+            }
+          }
+        },
+        {
+          "name": "Get All People",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/expenses/people",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "expenses", "people"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Settlements",
+      "item": [
+        {
+          "name": "Get Current Balances",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/settlements/balances",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "settlements", "balances"]
+            }
+          }
+        },
+        {
+          "name": "Get Settlement Summary",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/settlements",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "settlements"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Edge Cases",
+      "item": [
+        {
+          "name": "Add Expense - Invalid Amount",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": -100.00,\n  \"description\": \"Invalid amount test\",\n  \"paid_by\": \"Shantanu\",\n  \"split_type\": \"equal\",\n  \"split_details\": {\n    \"Shantanu\": -33.33,\n    \"Sanket\": -33.33,\n    \"Om\": -33.33\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/expenses",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "expenses"]
+            }
+          }
+        },
+        {
+          "name": "Add Expense - Missing Fields",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 100.00\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/expenses",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "expenses"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+} 
